@@ -17,11 +17,11 @@ public class ObserverManager : Singleton<ObserverManager>
         observers.Remove(observer);
     }
 
-    public virtual void OnDespawn(float distance)
+    public virtual void OnScore(int score)
     {
         foreach (IObserver observer in observers)
         {
-            observer.DeSpawnByDistance(distance);
+            observer.UpdateScore(score);
         }
     }
 }
