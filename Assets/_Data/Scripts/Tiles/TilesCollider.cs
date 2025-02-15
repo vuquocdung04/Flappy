@@ -40,4 +40,14 @@ public class TilesCollider : LoadAutoComponents
         _boxColliderDown.offset = new Vector2(0, -4.5f);
     }
 
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.LogError("test");
+    }
+
+    protected void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.LogError("PlayerDead");
+    }
+
 }
