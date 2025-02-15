@@ -18,7 +18,7 @@ public class TileSpawner : LoadAutoComponents
         {
             this.prefabs.Add(prefab);
         }
-        //this.HidePrefabs();
+        this.HidePrefabs();
     }
 
     protected virtual void HidePrefabs()
@@ -27,5 +27,11 @@ public class TileSpawner : LoadAutoComponents
         {
             prefab.gameObject.SetActive(false);
         }
+    }
+
+    public virtual Transform RanDomSpawnPrefabs()
+    {
+        int rand = Random.Range(0, this.prefabs.Count);
+        return this.prefabs[rand];
     }
 }
