@@ -42,7 +42,7 @@ public class TilesCollider : LoadAutoComponents
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.LogError("test");
+        ObserverManager.Instance.NotifyUpdateScore();
     }
 
     protected void OnCollisionEnter2D(Collision2D collision)

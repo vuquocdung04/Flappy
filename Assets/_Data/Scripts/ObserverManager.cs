@@ -1,27 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ObserverManager : Singleton<ObserverManager>
 {
-    [Header("ObserverManager")]
-    [SerializeField] protected List<IObserver> observers = new List<IObserver>();
+    [SerializeField] protected List<Action> listeners = new List<Action>();
 
-    public virtual void AddListen(IObserver observer)
+    public virtual void AddListener(Action callback)
     {
-        observers.Add(observer);
+        if(!this.listeners.Contains(callback))
+            this.listeners.Add(callback);
     }
 
-    public virtual void RemoveListen(IObserver observer)
+    public virtual void RemoveListener(Action callback)
     {
-        observers.Remove(observer);
+        if (!this.listeners.Contains(callback))
+            return;
+        this.listeners.Remove(callback);
     }
 
-    public virtual void OnScore(int score)
+    public virtual void NotifyUpdateScore()
     {
-        foreach (IObserver observer in observers)
+        if (this.listeners.Count == 0) return;
+        foreach (var listener in this.listeners)
         {
-            observer.UpdateScore(score);
+            listener?.Invoke();
         }
     }
 }
