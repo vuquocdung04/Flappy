@@ -47,7 +47,8 @@ public class TilesCollider : LoadAutoComponents
 
     protected void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.LogError("PlayerDead");
+        UIManager.Instance.UICenter.BtnPopUpGameOver.gameObject.SetActive(true);
+        SceneTimeScale.PauseGame();
     }
 
 }

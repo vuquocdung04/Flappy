@@ -15,7 +15,7 @@ public class TileDespawnByDistance : LoadAutoComponents
     protected virtual void DesSpawn()
     {
         if (!CanDespawn()) return;
-        SimplePool2.Despawn(this.transform.parent.gameObject);
+        SimplePool.Despawn(this.transform.parent.gameObject);
     }
 
     protected virtual bool CanDespawn()
