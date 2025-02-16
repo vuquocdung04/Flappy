@@ -9,5 +9,9 @@ public class Const
     public const string ScorePlay = "ScorePlay";
     public const string HightScorePopUp = "HightScorePopUp";
     public const string ScorePopUp = "ScorePopUp";
+
+    //
+    public const string UpSpeedByScore = "SpeedScore";
+    public const string UpDistanceByScore = "DistanceLimit";
     #endregion
 }

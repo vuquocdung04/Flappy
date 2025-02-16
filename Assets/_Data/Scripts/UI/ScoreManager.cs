@@ -26,6 +26,8 @@ public class ScoreManager : LoadAutoComponents
         //ObserverManager.Instance.RemoveListenerScore(OnUpdateScore);
         //ObserverManager.Instance.RemoveListenerPopUp(OnUpdateHightScorePopUp);
 
+        if (ObserverManager.Instance == null) return;
+
         ObserverManager.Instance.RemoveObserver(Const.ScorePlay, OnUpdateScore);
         ObserverManager.Instance.RemoveObserver(Const.HightScore, OnUpdateHightScorePopUp);
         ObserverManager.Instance.RemoveObserver(Const.ScorePopUp, OnUpdateScorePopUp);
@@ -69,7 +71,13 @@ public class ScoreManager : LoadAutoComponents
             hightScore= score;
             PlayerPrefs.SetInt(Const.HightScore,hightScore);
         }
-        
+
+
+        if (score % 10 == 0 && score > 0)
+        {
+            ObserverManager.Instance.Notify(Const.UpSpeedByScore);
+            ObserverManager.Instance.Notify(Const.UpDistanceByScore);
+        }
     }
     public void OnUpdateScorePopUp()
     {
