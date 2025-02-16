@@ -49,7 +49,7 @@ public class TileSpawnRamdom : LoadAutoComponents
 
         pos = new Vector2(spawnPoints.position.x, Random.Range(-3f,3f));
         Transform prefab = this.tileSpawner.RanDomSpawnPrefabs();
-        Transform obj = SimplePool2.Spawn(prefab,pos,Quaternion.identity);
+        Transform obj = SimplePool.Spawn(prefab,pos,Quaternion.identity);
         obj.gameObject.SetActive(true);
     }
 
