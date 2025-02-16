@@ -6581,7 +6581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1826225282}
-  - component: {fileID: 1826225283}
+  - component: {fileID: 1826225285}
   - component: {fileID: 1826225284}
   - component: {fileID: 1826225281}
   - component: {fileID: 1826225280}
@@ -6677,24 +6677,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1826225283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826225278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37954c5af15eca14eb2b3221d3844004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textScore: {fileID: 1096265304}
-  textScorePopUp: {fileID: 973463079}
-  hightScorePopUp: {fileID: 1045626669}
-  score: 0
-  scorePopUp: 0
-  hightScore: 0
 --- !u!114 &1826225284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6709,6 +6691,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uICenter: {fileID: 1367665831}
   uITopRight: {fileID: 1955411448}
+--- !u!114 &1826225285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826225278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d83a69f046320774a92dd16b68d45fb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textScore: {fileID: 1096265304}
+  textScorePopUp: {fileID: 973463079}
+  hightScorePopUp: {fileID: 1045626669}
 --- !u!1 &1876237273
 GameObject:
   m_ObjectHideFlags: 0

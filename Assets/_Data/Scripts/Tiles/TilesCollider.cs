@@ -42,13 +42,15 @@ public class TilesCollider : LoadAutoComponents
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        ObserverManager.Instance.NotifyUpdateScore();
+        ObserverManager.Instance.Notify(Const.ScorePlay);
     }
 
     protected void OnCollisionEnter2D(Collision2D collision)
     {
         UIManager.Instance.UICenter.BtnPopUpGameOver.gameObject.SetActive(true);
         SceneTimeScale.PauseGame();
+        ObserverManager.Instance.Notify(Const.HightScore);
+        ObserverManager.Instance.Notify(Const.ScorePopUp);
     }
 
 }

@@ -14,14 +14,21 @@ public class ScoreManager : LoadAutoComponents
     private void Start()
     {
         hightScore = PlayerPrefs.GetInt(Const.HightScore, 0);
-        ObserverManager.Instance.AddListenerScore(OnUpdateScore);
-        ObserverManager.Instance.AddListenerScore(OnUpdateScorePopUp);
+        //ObserverManager.Instance.AddListenerScore(OnUpdateScore);
+        //ObserverManager.Instance.AddListenerPopUp(OnUpdateHightScorePopUp);
+        ObserverManager.Instance.AddObserver(Const.ScorePlay, OnUpdateScore);
+        ObserverManager.Instance.AddObserver(Const.HightScore, OnUpdateHightScorePopUp);
+        ObserverManager.Instance.AddObserver(Const.ScorePopUp, OnUpdateScorePopUp);
     }
 
     private void OnDestroy()
     {
-        ObserverManager.Instance.RemoveListenerScore(OnUpdateScore);
-        ObserverManager.Instance.RemoveListenerScore(OnUpdateScorePopUp);
+        //ObserverManager.Instance.RemoveListenerScore(OnUpdateScore);
+        //ObserverManager.Instance.RemoveListenerPopUp(OnUpdateHightScorePopUp);
+
+        ObserverManager.Instance.RemoveObserver(Const.ScorePlay, OnUpdateScore);
+        ObserverManager.Instance.RemoveObserver(Const.HightScore, OnUpdateHightScorePopUp);
+        ObserverManager.Instance.RemoveObserver(Const.ScorePopUp, OnUpdateScorePopUp);
     }
 
     #region LoadComponent
@@ -61,18 +68,16 @@ public class ScoreManager : LoadAutoComponents
         {
             hightScore= score;
             PlayerPrefs.SetInt(Const.HightScore,hightScore);
-            OnUpdateHightScorePopUp();
         }
         
     }
     public void OnUpdateScorePopUp()
     {
-        score++;
-        this.textScorePopUp.text = "Score: " + score++.ToString();
+        this.textScorePopUp.text = "Score: " + score.ToString();
     }
 
     public void OnUpdateHightScorePopUp()
     {
-        this.hightScorePopUp.text = "Best: " + hightScore.ToString();
+        this.hightScorePopUp.text = "Best: " + PlayerPrefs.GetInt(Const.HightScore,hightScore);
     }
 }
