@@ -5,9 +5,12 @@ using UnityEngine;
 public class UICenter : LoadAutoComponents
 {
     [SerializeField] protected BtnPopUpGamePause popUpGamePause;
+    public BtnPopUpGamePause BtnPopUpGamePause => popUpGamePause;
     [SerializeField] protected BtnPopUpGameOver popUpGameOver;
 
+    public BtnPopUpGameOver BtnPopUpGameOver => popUpGameOver;
 
+    #region LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -26,4 +29,7 @@ public class UICenter : LoadAutoComponents
         if (this.popUpGameOver != null) return;
         this.popUpGameOver = GetComponentInChildren<BtnPopUpGameOver>();
     }
+    #endregion
+
+
 }

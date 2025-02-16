@@ -5,7 +5,9 @@ using UnityEngine;
 public class UIManager : Singleton<UIManager>
 {
     [SerializeField] protected UICenter uICenter;
+    public UICenter UICenter => uICenter;
     [SerializeField] protected UITopRight uITopRight;
+    public UITopRight UITopRight => uITopRight;
 
     protected override void LoadComponents()
     {
