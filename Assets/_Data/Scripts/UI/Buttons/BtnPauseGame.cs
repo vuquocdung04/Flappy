@@ -7,6 +7,10 @@ public class BtnPauseGame : LoadAutoComponents
 {
     [SerializeField] protected Button buttonPause;
 
+    private void Start()
+    {
+        buttonPause.onClick.AddListener(this.OnClickPauseGame);
+    }
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -17,5 +21,12 @@ public class BtnPauseGame : LoadAutoComponents
     {
         if (this.buttonPause != null) return;
         this.buttonPause = GetComponent<Button>();
+    }
+
+    public virtual void OnClickPauseGame()
+    {
+        Debug.LogError("Game pause");
+        UIManager.Instance.UICenter.BtnPopUpGamePause.gameObject.SetActive(true);
+        SceneTimeScale.PauseGame();
     }
 }
