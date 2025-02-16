@@ -5,7 +5,18 @@ using UnityEngine;
 public class TileDespawnByDistance : LoadAutoComponents
 {
     [SerializeField] protected float distance;
-    [SerializeField] protected float distanceLimit = 40;
+    [SerializeField] public float distanceLimit = 40;
+
+    private void Start()
+    {
+        ObserverManager.Instance.AddObserver(Const.UpDistanceByScore, UpDistanceLimit);
+    }
+
+    private void OnDestroy()
+    {
+        if (ObserverManager.Instance == null) return;
+        ObserverManager.Instance.RemoveObserver(Const.UpDistanceByScore, UpDistanceLimit);
+    }
 
     private void Update()
     {
@@ -24,4 +35,8 @@ public class TileDespawnByDistance : LoadAutoComponents
         return this.distance > this.distanceLimit;
     }
 
+    public void UpDistanceLimit()
+    {
+        distanceLimit += 5f;
+    }
 }
