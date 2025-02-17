@@ -13,15 +13,19 @@ public class SceneHomeUI : LoadAutoComponents
 
     [Header("BtnShop")]
     [SerializeField] protected UIShopCtrl uIShopCtrl;
+    [Header("BtnSetting")]
+    [SerializeField] protected UIAudioSceneHome uIAudioSceneHome;
 
-    [Header("BtnCloseShop")]
+    [Header("BtnClose")]
     [SerializeField] protected Button btnCloseShop;
+    [SerializeField] protected Button btnCloseSetting;
     private void Start()
     {
         btnPlay.onClick.AddListener(OnBtnPlay);
         btnSetting.onClick.AddListener(OnBtnSetting);
         btnShop.onClick.AddListener(OnBtnShop);
         btnCloseShop.onClick.AddListener(OnCloseShop);
+        btnCloseSetting.onClick.AddListener(OnCloseSetting);
     }
 
     #region LoadComponents
@@ -33,6 +37,8 @@ public class SceneHomeUI : LoadAutoComponents
         this.LoadBtnShop();
         this.LoadUIShopCtrl();
         this.LoadBtnCloseShop();
+        this.LoadBtnCloseSetting();
+        this.LoadUIAudioSceneHome();
     }
 
     protected virtual void LoadBtnPlay()
@@ -64,6 +70,19 @@ public class SceneHomeUI : LoadAutoComponents
         this.btnCloseShop = transform.Find("BtnCloseShop").GetComponent<Button>();
         this.btnCloseShop.gameObject.SetActive(false);
     }
+    protected virtual void LoadUIAudioSceneHome()
+    {
+        if (this.uIAudioSceneHome != null) return;
+        this.uIAudioSceneHome = GetComponentInChildren<UIAudioSceneHome>();
+        this.uIAudioSceneHome.gameObject.SetActive(false);
+    }
+
+    protected virtual void LoadBtnCloseSetting()
+    {
+        if (this.btnCloseSetting != null) return;
+        this.btnCloseSetting = transform.Find("BtnCloseSetting").GetComponent<Button>();
+        this.btnCloseSetting.gameObject.SetActive(false);
+    }
     #endregion
 
     public void OnBtnPlay()
@@ -73,7 +92,8 @@ public class SceneHomeUI : LoadAutoComponents
 
     public void OnBtnSetting()
     {
-        Debug.LogError("Setting");
+        this.uIAudioSceneHome.gameObject.SetActive(true);
+        this.btnCloseSetting.gameObject.SetActive(true);
     }
 
     public void OnBtnShop()
@@ -85,5 +105,10 @@ public class SceneHomeUI : LoadAutoComponents
     {
         this.uIShopCtrl.gameObject.SetActive(false);
         this.btnCloseShop.gameObject.SetActive(false);
+    }
+    public void OnCloseSetting()
+    {
+        this.uIAudioSceneHome.gameObject.SetActive(false);
+        this.btnCloseSetting.gameObject.SetActive(false);
     }
 }
