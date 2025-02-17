@@ -10,9 +10,15 @@ public class CountDownManager : LoadAutoComponents
     [SerializeField] protected Transform parent;
 
     Coroutine coroutine;
-    private void Start()
+
+    protected override void Awake()
     {
         SceneTimeScale.PauseGame();
+        base.Awake();
+
+    }
+    private void Start()
+    {
         StartCountDown();
         ObserverManager.Instance.AddObserver(Const.CountDown, StartCountDown);
         ObserverManager.Instance.AddObserver(Const.ListenerCount,ResetCount);
