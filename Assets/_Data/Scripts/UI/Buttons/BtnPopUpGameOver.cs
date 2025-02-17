@@ -55,7 +55,7 @@ public class BtnPopUpGameOver : LoadAutoComponents
     }
     public void OnPlayAgain()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(Const.SceneGamePlay);
         SceneTimeScale.ContinueGame();
     }
     public void OnShare()

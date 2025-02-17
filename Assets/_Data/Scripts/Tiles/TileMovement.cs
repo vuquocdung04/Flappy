@@ -9,12 +9,12 @@ public class TileMovement : LoadAutoComponents
 
     private void Start()
     {
-        ObserverManager.Instance.AddObserver(Const.UpSpeedByScore, UpSpeed);
+        //ObserverManager.Instance.AddObserver(Const.UpSpeedByScore, UpSpeed);
     }
     private void OnDestroy()
     {
-        if (ObserverManager.Instance == null) return;
-        ObserverManager.Instance.RemoveObserver(Const.UpSpeedByScore, UpSpeed);
+        //if (ObserverManager.Instance == null) return;
+        //ObserverManager.Instance.RemoveObserver(Const.UpSpeedByScore, UpSpeed);
     }
 
     private void Update()
