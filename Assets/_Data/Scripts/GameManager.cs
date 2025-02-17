@@ -6,6 +6,7 @@ public class GameManager : LoadAutoComponents
 {
     [SerializeField] protected List<GameObject> prefabs;
 
+    public static bool isPauseGame = false;
     private void Start()
     {
         SpawnSelectedBird();

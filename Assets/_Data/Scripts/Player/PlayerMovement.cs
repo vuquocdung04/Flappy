@@ -8,7 +8,7 @@ public class PlayerMovement : PlayerAbstract
 {
     [SerializeField] protected float jumpForce = 5f;
     [SerializeField] protected float rotateSpeed = 1f;
-
+    
 
     private void Update()
     {
@@ -21,9 +21,11 @@ public class PlayerMovement : PlayerAbstract
 
     protected virtual void Moving()
     {
+        if (!GameManager.isPauseGame) return;
         if (InputManager.Instance.HandleInputMouseClick())
         {
             PlayerCtrl.Rigidbody2D.velocity = Vector2.up * jumpForce;
+            ObserverManager.Instance.Notify(Const.AudioClipFly);
         }
     }
 

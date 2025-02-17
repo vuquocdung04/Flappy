@@ -2228,10 +2228,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 419175610}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.023812499, y: 0.8822964}
-  m_AnchorMax: {x: 0.17952085, y: 0.9757037}
-  m_AnchoredPosition: {x: 0, y: 0.5}
-  m_SizeDelta: {x: 0, y: -1}
+  m_AnchorMin: {x: 0, y: 0.9071482}
+  m_AnchorMax: {x: 0.20883334, y: 1}
+  m_AnchoredPosition: {x: 0.5, y: 0}
+  m_SizeDelta: {x: -1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1096265304
 MonoBehaviour:
@@ -2280,10 +2280,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.8
-  m_fontSizeBase: 36
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -2316,7 +2316,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 29.08522, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3326,11 +3326,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceBG: {fileID: 1483561935}
-  clipBG: {fileID: 0}
+  clipBG: {fileID: 8300000, guid: 83e73bbe40043a74db4978021256d8e0, type: 3}
   sourcePlay: {fileID: 1156970458}
-  clipPoint: {fileID: 0}
-  clipDie: {fileID: 0}
-  clipFly: {fileID: 0}
+  clipPoint: {fileID: 8300000, guid: 828863a2498655642945fa1e8d816e07, type: 3}
+  clipDie: {fileID: 8300000, guid: b9849ae3c62a359478647c157608ca5e, type: 3}
+  clipFly: {fileID: 8300000, guid: 9e784407f42040f438b7a3e647e2de0e, type: 3}
 --- !u!1 &1444579510
 GameObject:
   m_ObjectHideFlags: 0
