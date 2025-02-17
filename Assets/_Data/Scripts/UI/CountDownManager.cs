@@ -67,11 +67,13 @@ public class CountDownManager : LoadAutoComponents
         if (countDownCount >= 0)
         {
             coroutine = StartCoroutine(CountDownCo());
+            //GameManager.isPauseGame = false;
             SceneTimeScale.PauseGame();
         }
         else
         {
             this.parent.gameObject.SetActive(false);
+            GameManager.isPauseGame = true;
             SceneTimeScale.ContinueGame();
         }
     }
