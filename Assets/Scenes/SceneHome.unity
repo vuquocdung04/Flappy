@@ -215,6 +215,7 @@ MonoBehaviour:
   button: {fileID: 1357877134}
   textButton: {fileID: 1471400584}
   uIShopCtrl: {fileID: 220904333}
+  birdIndex: 2
 --- !u!1 &154554713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,6 +1002,7 @@ MonoBehaviour:
   button: {fileID: 1952701157}
   textButton: {fileID: 1707925229}
   uIShopCtrl: {fileID: 220904333}
+  birdIndex: 0
 --- !u!1 &732796828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,6 +1876,7 @@ MonoBehaviour:
   button: {fileID: 1312616360}
   textButton: {fileID: 1652793239}
   uIShopCtrl: {fileID: 220904333}
+  birdIndex: 1
 --- !u!1 &1471400582
 GameObject:
   m_ObjectHideFlags: 0

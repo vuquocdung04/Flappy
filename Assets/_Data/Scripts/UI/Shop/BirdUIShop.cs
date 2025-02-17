@@ -8,6 +8,7 @@ public class BirdUIShop : LoadAutoComponents
     [SerializeField] protected Button button;
     [SerializeField] protected TMP_Text textButton;
     [SerializeField] protected UIShopCtrl uIShopCtrl;
+    [SerializeField] protected int birdIndex;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class BirdUIShop : LoadAutoComponents
         this.LoadButton();
         this.LoadTextButton();
         this.LoadUIShopCtrl();
+        this.LoadIndexBird();
     }
 
     protected virtual void LoadButton()
@@ -39,6 +41,14 @@ public class BirdUIShop : LoadAutoComponents
         if (this.uIShopCtrl != null) return;
         this.uIShopCtrl = GetComponentInParent<UIShopCtrl>();
     }
+
+    protected virtual void LoadIndexBird()
+    {
+        for (int i = 0; i < uIShopCtrl.birdUIShops.Count; i++){
+            uIShopCtrl.birdUIShops[i].birdIndex = i;
+        }
+
+    }
     #endregion
 
 
@@ -52,6 +62,9 @@ public class BirdUIShop : LoadAutoComponents
 
         button.image.color = Color.green;
         textButton.text = "Selected";
+
+        PlayerPrefs.SetInt(Const.Bird, birdIndex);
+        Debug.LogError(PlayerPrefs.GetInt(Const.Bird, birdIndex));
     }
 
     protected virtual void ResetButton()
