@@ -19,6 +19,12 @@ public class Const
     //
     public const string CountDown = "CountDown";
     public const string ListenerCount = "ListenerCount";
+
+    //
+
+    public const string AudioClipPoint = "Points";
+    public const string AudioClipDie = "Die";
+    public const string AudioClipFly = "Fly";
     #endregion
 
     #region Scene
