@@ -72,12 +72,12 @@ public class ScoreManager : LoadAutoComponents
             PlayerPrefs.SetInt(Const.HightScore,hightScore);
         }
 
-
-        if (score % 10 == 0 && score > 0)
-        {
-            ObserverManager.Instance.Notify(Const.UpSpeedByScore);
-            ObserverManager.Instance.Notify(Const.UpDistanceByScore);
-        }
+        //TODO: pipe speed up
+        //if (score % 10 == 0 && score > 0)
+        //{
+        //    ObserverManager.Instance.Notify(Const.UpSpeedByScore);
+        //    ObserverManager.Instance.Notify(Const.UpDistanceByScore);
+        //}
     }
     public void OnUpdateScorePopUp()
     {

@@ -13,5 +13,14 @@ public class Const
     //
     public const string UpSpeedByScore = "SpeedScore";
     public const string UpDistanceByScore = "DistanceLimit";
+
+    //
+    public const string CountDown = "CountDown";
+    public const string ListenerCount = "ListenerCount";
+    #endregion
+
+    #region Scene
+    public const string SceneHome = "SceneHome";
+    public const string SceneGamePlay = "SceneGamePlay";
     #endregion
 }

@@ -28,5 +28,6 @@ public class BtnPauseGame : LoadAutoComponents
         Debug.LogError("Game pause");
         UIManager.Instance.UICenter.BtnPopUpGamePause.gameObject.SetActive(true);
         SceneTimeScale.PauseGame();
+        ObserverManager.Instance.Notify(Const.ListenerCount);
     }
 }

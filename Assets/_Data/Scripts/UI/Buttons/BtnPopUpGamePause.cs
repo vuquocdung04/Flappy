@@ -70,13 +70,13 @@ public class BtnPopUpGamePause : LoadAutoComponents
     }
     public void OnPlayAgain()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(Const.SceneGamePlay);
         SceneTimeScale.ContinueGame();
     }
     public void OnPlayContinue()
     {
         UIManager.Instance.UICenter.BtnPopUpGamePause.gameObject.SetActive(false);
-        SceneTimeScale.ContinueGame();
+        ObserverManager.Instance.Notify(Const.CountDown);
     }
     public void OnPlayAudioClip()
     {
