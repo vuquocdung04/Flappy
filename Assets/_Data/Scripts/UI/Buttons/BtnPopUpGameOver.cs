@@ -51,7 +51,7 @@ public class BtnPopUpGameOver : LoadAutoComponents
 
     public void OnGoHome()
     {
-        Debug.LogError("GoHome");
+        SceneManager.LoadScene(Const.SceneHome);
     }
     public void OnPlayAgain()
     {

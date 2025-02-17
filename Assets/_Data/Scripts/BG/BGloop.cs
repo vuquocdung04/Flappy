@@ -5,7 +5,6 @@ using UnityEngine;
 public class BGloop : LoadAutoComponents
 {
     [SerializeField] protected SpriteRenderer _spriteRenderer;
-    [SerializeField] protected Transform _playerTrans;
     [SerializeField] protected float sizeBgLoop = 20f;
     [SerializeField] protected float speed = 4f;
     protected override void LoadComponents()
@@ -27,7 +26,7 @@ public class BGloop : LoadAutoComponents
     {
         this.transform.position += Vector3.left * speed * Time.deltaTime;
         //60 
-        if (Mathf.Abs(_playerTrans.transform.position.x - this.transform.position.x) >= 12f)
+        if (Mathf.Abs(Camera.main.transform.position.x - this.transform.position.x) >= 16f)
         {
             this.transform.position = Vector2.zero;
         }
