@@ -38,27 +38,31 @@ public class UIAudioSceneHome : LoadAutoComponents
 
     public void OnAudioBG()
     {
-        if (audioBG == 0)
+        if (PlayerPrefs.GetInt(Const.AudioBG, audioBG) == 0)
         {
             audioBG = 1;
+            PlayerPrefs.SetInt(Const.AudioBG,audioBG);
             btnAudioBG.image.color = Color.red;
         }
         else
         {
             audioBG = 0;
+            PlayerPrefs.SetInt(Const.AudioBG,audioBG);
             btnAudioBG.image.color = new Color32(35,255,0,255);
         }
     } 
     public void OnAudioClip()
     {
-        if (audioClip == 0)
+        if (PlayerPrefs.GetInt(Const.AudioClip, audioClip) == 0)
         {
             audioClip = 1;
+            PlayerPrefs.SetInt(Const.AudioClip, audioClip);
             btnAudioClip.image.color = Color.red;
         }
         else
         {
             audioClip = 0;
+            PlayerPrefs.SetInt(Const.AudioClip, audioClip);
             btnAudioClip.image.color = new Color32(35, 255, 0, 255);
         }
     }
