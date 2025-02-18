@@ -5,6 +5,10 @@ public class Const
     public const string HightScore = "HightScore";
     public const string Bird = "Bird";
 
+    //Audio
+    public const string AudioClip = "AudioClip";
+    public const string AudioBG = "AudioBG";
+
     #endregion
 
     #region Observer

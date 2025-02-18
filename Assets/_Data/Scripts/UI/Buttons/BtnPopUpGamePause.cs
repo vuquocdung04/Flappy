@@ -14,6 +14,8 @@ public class BtnPopUpGamePause : LoadAutoComponents
 
     private void Start()
     {
+
+
         buttonHome.onClick.AddListener(OnGoHome);
         buttonReplay.onClick.AddListener(OnPlayAgain);
         buttonContinue.onClick.AddListener(OnPlayContinue);
@@ -80,10 +82,10 @@ public class BtnPopUpGamePause : LoadAutoComponents
     }
     public void OnPlayAudioClip()
     {
-        Debug.LogError("PlayAudioClip");
+        
     }
     public void OnPlayAudioSource()
     {
-        Debug.LogError("PlayAudioSource");
+        
     }
 }
