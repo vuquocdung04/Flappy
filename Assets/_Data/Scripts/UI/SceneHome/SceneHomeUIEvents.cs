@@ -1,10 +1,11 @@
+﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SceneHomeUI : LoadAutoComponents
+public class SceneHomeUIEvents : LoadAutoComponents
 {
     [Header("BtnParents")]
     [SerializeField] protected Button btnPlay;
@@ -98,14 +99,16 @@ public class SceneHomeUI : LoadAutoComponents
 
     public void OnBtnShop()
     {
-        this.uIShopCtrl.gameObject.SetActive(true);
+        UIAnimation.ShowPopUp(this.uIShopCtrl.gameObject);
         this.btnCloseShop.gameObject.SetActive(true);
     }
     public void OnCloseShop()
     {
-        this.uIShopCtrl.gameObject.SetActive(false);
+        UIAnimation.HidePopUp(this.uIShopCtrl.gameObject);
         this.btnCloseShop.gameObject.SetActive(false);
     }
+
+
     public void OnCloseSetting()
     {
         this.uIAudioSceneHome.gameObject.SetActive(false);
