@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< HEAD
 public class TileCtrl : LoadAutoComponents
 {
     [SerializeField] protected TileMovement tileMovement;
@@ -39,4 +40,19 @@ public class TileCtrl : LoadAutoComponents
         this.tilesCollider = GetComponentInChildren<TilesCollider>();
     }
 
+=======
+public class TileCtrl : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+>>>>>>> d492bbc (tile + spawnpoint)
 }

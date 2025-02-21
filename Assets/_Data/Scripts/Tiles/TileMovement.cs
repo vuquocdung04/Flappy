@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TileMovement : LoadAutoComponents
 {
+<<<<<<< HEAD
     [SerializeField] public float tileSpeed = 4f;
 
     private void Start()
@@ -17,6 +18,9 @@ public class TileMovement : LoadAutoComponents
         //ObserverManager.Instance.RemoveObserver(Const.UpSpeedByScore, UpSpeed);
     }
 
+=======
+    [SerializeField] protected float tileSpeed = 4f;
+>>>>>>> d492bbc (tile + spawnpoint)
     private void Update()
     {
         this.Moving();
@@ -26,9 +30,12 @@ public class TileMovement : LoadAutoComponents
     {
         this.transform.parent.Translate(Vector3.left * tileSpeed * Time.deltaTime);
     }
+<<<<<<< HEAD
     public void UpSpeed()
     {
         tileSpeed += 0.5f;
     }
+=======
+>>>>>>> d492bbc (tile + spawnpoint)
 
 }

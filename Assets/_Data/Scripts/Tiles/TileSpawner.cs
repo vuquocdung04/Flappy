@@ -18,7 +18,11 @@ public class TileSpawner : LoadAutoComponents
         {
             this.prefabs.Add(prefab);
         }
+<<<<<<< HEAD
         this.HidePrefabs();
+=======
+        //this.HidePrefabs();
+>>>>>>> d492bbc (tile + spawnpoint)
     }
 
     protected virtual void HidePrefabs()
@@ -28,10 +32,13 @@ public class TileSpawner : LoadAutoComponents
             prefab.gameObject.SetActive(false);
         }
     }
+<<<<<<< HEAD
 
     public virtual Transform RanDomSpawnPrefabs()
     {
         int rand = Random.Range(0, this.prefabs.Count);
         return this.prefabs[rand];
     }
+=======
+>>>>>>> d492bbc (tile + spawnpoint)
 }
